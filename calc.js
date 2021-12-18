@@ -1,20 +1,20 @@
-let add = function (firstNumber, secondNumber) {
+const add = function (firstNumber, secondNumber) {
     return firstNumber + secondNumber;
 }
 
-let sub = function (firstNumber, secondNumber) {
+const sub = function (firstNumber, secondNumber) {
     return firstNumber - secondNumber;
 }
 
-let mult = function (firstNumber, secondNumber) {
+const mult = function (firstNumber, secondNumber) {
     return firstNumber * secondNumber;
 }
 
-let div = function (firstNumber, secondNumber) {
+const div = function (firstNumber, secondNumber) {
     return firstNumber / secondNumber;
 }
 
-let printResult = function (firstNumber, secondNumber, operator, result) {
+const printResult = function (firstNumber, secondNumber, operator, result) {
     console.log(`${firstNumber} ${operator} ${secondNumber} = ${result}`);
 }
 
