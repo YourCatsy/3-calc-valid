@@ -18,15 +18,6 @@ const printResult = function (firstNumber, secondNumber, selectedOperator, resul
     console.log(`${firstNumber} ${selectedOperator} ${secondNumber} = ${result}`);
 }
 
-function enterOperator() {
-    let operator = null;
-    do {
-        operator = prompt("What do you want to do?");
-    } while (!operators[operator]);
-
-    return operator;
-}
-
 const operators = { '+': add, '-': sub, '*': mult, '/': div };
 const selectedOperator = enterOperator();
 const firstNumber = enterNumber('first');
@@ -46,4 +37,13 @@ function enterNumber(serialNumber) {
     while (isNaN(number));
 
     return number;
+}
+
+function enterOperator() {
+    let operator = null;
+    do {
+        operator = prompt("What do you want to do?");
+    } while (!operators[operator]);
+
+    return operator;
 }
