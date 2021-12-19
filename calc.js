@@ -14,23 +14,28 @@ const div = function (firstNumber, secondNumber) {
     return firstNumber / secondNumber;
 }
 
-const printResult = function (firstNumber, secondNumber, operator, result) {
-    console.log(`${firstNumber} ${operator} ${secondNumber} = ${result}`);
+const printResult = function (firstNumber, secondNumber, selectedOperator, result) {
+    console.log(`${firstNumber} ${selectedOperator} ${secondNumber} = ${result}`);
+}
+
+function enterOperator() {
+    let operator = null;
+    do {
+        operator = prompt("What do you want to do?");
+    } while (!operators[operator]);
+
+    return operator;
 }
 
 const operators = { '+': add, '-': sub, '*': mult, '/': div };
-let operator = null;
-do {
-    operator = prompt("What do you want to do?");
-} while (!operators[operator]);
-
+const selectedOperator = enterOperator();
 const firstNumber = enterNumber('first');
 const secondNumber = enterNumber('second');
-const result = operators[operator](firstNumber, secondNumber);
+const result = operators[selectedOperator](firstNumber, secondNumber);
 
-console.log(operators[operator]);
+console.log(operators[selectedOperator]);
 console.log(result);
-printResult(firstNumber, secondNumber, operator, result);
+printResult(firstNumber, secondNumber, selectedOperator, result);
 
 function enterNumber(serialNumber) {
     let number = NaN;
